@@ -1,3 +1,4 @@
+@include('header')
 <h2>Crear Novedad</h2>
 <form action="./save" method="POST">
     {{ csrf_field() }}
@@ -23,3 +24,4 @@
 </form>
 <h4>Todas las novedades</h4>
 <p>NO HAY NOVEDADES</p>
+@include('footer')

@@ -27,6 +27,16 @@ class OperacionController extends Controller
         ]);
     }
 
+    public function show($id){
+
+        $operacion = Operacion::find($id);
+        return view('operacion/show-detail',
+            [
+                'operacion' => $operacion
+            ]
+        );
+    }
+
     public function saveNovedad(Request $request){
         $id = $request->input('id');
         $operacion = Operacion::find($id);
@@ -42,6 +52,6 @@ class OperacionController extends Controller
         // $novedad->save();
 
         $operacion->novedades()->save($novedad);
-        return redirect()->action('NovedadController@index');
+        return redirect()->action('OperacionController@index');
     }
 }

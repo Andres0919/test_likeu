@@ -17,6 +17,6 @@ class Operacion extends Model
 
     public function agentes()
     {
-        return $this->belongsToMany('App\Agente');
+        return $this->belongsToMany('App\Agente', 'agentesxoperaciones', 'id_agente', 'id_operacion');
     }
 }

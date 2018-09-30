@@ -13,11 +13,11 @@ class Novedad extends Model
 
     public function agentes()
     {
-        return $this->belongsToMany('App\Agente');
+        return $this->belongsToMany('App\Agente', 'novedades_agentes', 'id_novedad', 'id_agente');
     }
 
     public function operaciones()
     {
-        return $this->belongsToMany('App\Agente', 'novedades_operaciones', 'id_operacion', 'id_novedad');
+        return $this->belongsToMany('App\Operacion', 'novedades_operaciones', 'id_novedad', 'id_operacion');
     }
 }

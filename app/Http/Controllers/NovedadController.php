@@ -18,7 +18,11 @@ class NovedadController extends Controller
     }
 
     public function show($id){
-        return 'novedad '.$id;
+        return view('novedad/show-detail',
+            [
+                'novedad' => Novedad::find($id)
+            ]
+        );
     }
 
     public function create(){
